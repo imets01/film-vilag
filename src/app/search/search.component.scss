@@ -1,0 +1,177 @@
+button {
+    background-color: #00DFD7;
+    color: white;
+}
+
+/* CSS */
+.button-17 {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: inline-flex;
+    fill: currentcolor;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: .25px;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform, opacity;
+    z-index: 0;
+}
+
+.button-17:hover {
+    background: #F6F9FE;
+    color: #00b0aa;
+}
+
+.button-17:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    form {
+        width: 60%;
+        .d-flex {
+            input[type="text"].form-control {
+                margin-right: 20px;
+                width: 100%;
+                color: rgb(36, 35, 42);
+                font-family: "Google Sans", Roboto, Arial, sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 20px;
+                min-height: 28px;
+                border-radius: 24px;
+                padding: 8px 16px;
+                border: 2px solid transparent;
+                box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+                background: rgb(251, 251, 251);
+                transition: all 0.1s ease 0s;
+                &:focus {
+                    border: 2px solid transparent;
+                }
+            }
+        }
+    }
+}
+
+// .input-group {
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 75px;
+
+
+
+//     // form {
+//     //   display: flex;
+//     //   flex-direction: column;
+//     //   align-items: center;
+//     //   .form-outline {
+//     //     input[type="text"].form-control {
+//     //       width: 500px;
+//     //       padding: 10px;
+//     //     }
+//     //   }
+//     // }
+//   }
+
+img {
+    width: 200px;
+    height: 300px;
+    
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 20px auto;
+
+    .cover {
+        border-radius: 20px;
+        margin: 10px;
+        margin-bottom: 0px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+
+
+    }
+
+    .detail {
+        max-width: 200px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        .name {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+.result-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .movies-thumbnail {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+
+        .movie {
+            .cover {
+                margin-left: 10px;
+                cursor: pointer;
+
+
+            }
+
+            .detail {
+                margin-left: 10px;
+
+                width: 180px;
+
+                .name {
+                    text-align: center;
+                    font-weight: bold;
+                    margin-top: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

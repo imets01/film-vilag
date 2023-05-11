@@ -1,0 +1,61 @@
+<app-header></app-header>
+<main class="container">
+  <div class="left-column">
+    <img class="poster" src="https://image.tmdb.org/t/p/original/{{ seriesDetails.poster_path }}" alt="Couldn't load">
+  </div>
+
+
+  <div class="right-column">
+    <div class="title">{{ seriesDetails.title || seriesDetails.name }}</div>
+
+    <div class="details">
+      <div>{{ seriesDetails.first_air_date }}</div>
+      <div class="dot"> &#8226; </div>
+      <div class="genre" *ngFor="let genre of seriesDetails.genres">
+        <li class="genres">{{ genre.name }}</li>
+      </div>
+
+      <div class="dot"> &#8226; </div>
+      <div> {{ seriesDetails.runtime }}m</div>
+
+    </div>
+
+    <div class="overview">
+      <div class="header">Overview</div>
+      <div class="text"> {{ seriesDetails.overview }}</div>
+    </div>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Seasons
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" (click)="goToSeasons(seriesDetails.id, season.id)"  *ngFor="let season of seriesDetails.seasons">{{ season.name }}</a>
+      </div>
+    </div>
+
+    <div class="provider" *ngIf="seriesProviders.HU">
+      <div *ngFor="let provider of seriesProviders.HU.flatrate ">
+        <div class="stream-on">Stream on:</div>
+        <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ provider.logo_path }}" alt="Card image cap">
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+<body>
+  <div class="cast">Cast</div>
+  <div class="wrapper">
+
+    <div class="card" *ngFor="let actor of seriesCredits.slice(0,15)">
+      <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ actor.profile_path }}" alt="Card image cap">
+      <div class="card-body">
+        <div class="name"> {{ actor.original_name }}</div>
+        <div class="character">{{ actor.character }}</div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false
+
 };
 
 /*
@@ -14,3 +15,8 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+
+  // apiBaseUrl: 'https://api.themoviedb.org/3',
+  // apiKey: '1bf6d24beb8b99101d0ae2e3af4196b6',
+  // imageUrl: 'https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}'

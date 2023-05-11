@@ -1,0 +1,38 @@
+.header-container {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #00DFD7;
+    // background: linear-gradient(45deg, #00DFD7 0%, #D0007D 100%);
+    // background: linear-gradient(45deg, #00DFD7 0%, #A40068 100%);
+    background: linear-gradient(45deg, #00DFD7 0%, #8B0058 100%);
+    
+    .logo {
+        font-family: "Google Sans", Roboto, Arial, sans-serif;
+        font-size: 28px;
+        font-weight: bold;
+        margin-left: 30px;
+        color: white;
+        font-variant: small-caps;
+        letter-spacing: 3px;
+    }
+
+    .selector{
+        display: inline-flex;
+        margin-left: 50px;
+        margin-right: auto;
+        color: white;
+        div{
+            margin-left: 20px;
+        }
+    }
+
+    .search {
+        font-size: 15px;
+        font-weight: bold;
+        margin-right: 30px;
+        color: white;
+    }
+}

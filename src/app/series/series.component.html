@@ -1,0 +1,41 @@
+
+<div class="home-container">
+  <div class="all-series">
+    
+    <!-- trending start -->
+    <div class="trending-series">
+      <h4>Trending</h4>
+      <div class="seriesposter mt-3 p-2">
+        <div class="series" *ngFor="let tv of tvtrendingApiData">
+
+          <div class="cover">
+            <img src="https://image.tmdb.org/t/p/original/{{ tv.poster_path }}" alt="Couldn't load" [routerLink]="['/series', tv.id]">
+          </div>
+          <div class="detail">
+            <div class="name">{{ tv.title || tv.name }}</div>
+            <div class="rating"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- trending end -->
+
+    <!-- popular start -->
+    <div class="popular-series">
+      <h4>Popular</h4>
+      <div class="seriesposter mt-3 p-2">
+        <div class="series" *ngFor="let tv of tvpopularApiData">
+          <div class="cover">
+            <img src="https://image.tmdb.org/t/p/original/{{ tv.poster_path }}" alt="Couldn't load" [routerLink]="['/series', tv.id]">
+          </div>
+          <div class="detail">
+            <div class="name">{{ tv.title || tv.name }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popular end -->
+  </div>
+</div>
+
+

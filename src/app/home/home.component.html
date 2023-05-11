@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<div class="home-container">
+  <div class="all-movies">
+
+    <!-- trending start -->
+    <div class="trending-movies">
+      <h4>Trending</h4>
+      <div class="movieposter mt-3 p-2">
+        <div class="movie" *ngFor="let movie of trendingApiData">
+          <!-- <div class="card">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{ movie.title || movie.name }}</p>
+            </div>
+          </div> -->
+          <div class="cover">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load" [routerLink]="['/movie', movie.id]">
+          </div>
+          <div class="detail">
+            <div class="name">{{ movie.title || movie.name }}</div>
+            <div class="rating"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- trending end -->
+
+    <!-- popular start -->
+    <div class="popular-movies">
+      <h4>Popular</h4>
+      <div class="movieposter mt-3 p-2">
+        <div class="movie" *ngFor="let movie of popularApiData">
+          <div class="cover">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load" [routerLink]="['/movie', movie.id]">
+          </div>
+          <div class="detail">
+            <div class="name">{{ movie.title || movie.name }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- popular end -->
+  </div>
+</div>
+
+

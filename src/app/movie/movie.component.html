@@ -1,0 +1,52 @@
+<app-header></app-header>
+<main class="container">
+    <div class="left-column">
+        <img class="poster" src="https://image.tmdb.org/t/p/original/{{ movieDetails.poster_path }}" alt="Couldn't load">
+    </div>
+
+
+    <div class="right-column">
+        <div class="title">{{ movieDetails.title || movieDetails.name }}</div>
+
+        <div class="details">
+            <div>{{ movieDetails.release_date }}</div>
+            <div class="dot"> &#8226; </div>
+            <div class="genre" *ngFor="let genre of movieDetails.genres">
+                <li class="genres">{{ genre.name }}</li>
+            </div>
+
+            <div class="dot"> &#8226; </div>
+            <div> {{ movieDetails.runtime }}m</div>
+
+        </div>
+
+        <div class="overview">
+            <div class="header">Overview</div>
+            <div class="text"> {{ movieDetails.overview }}</div> 
+        </div>
+        <div class="provider" *ngIf="movieProviders.HU">
+            <div *ngFor="let provider of movieProviders.HU.flatrate ">
+                <div class="stream-on">Stream on:</div>
+                <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ provider.logo_path }}"
+                alt="Card image cap">
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<body>
+    <div class="cast">Cast</div>
+    <div class="wrapper">
+        
+        <div class="card" *ngFor="let actor of movieCredits.slice(0,15)">
+            <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ actor.profile_path }}"
+                alt="Card image cap">
+            <div class="card-body">
+                <div class="name"> {{ actor.original_name }}</div>
+                <div class="character">{{ actor.character }}</div>
+            </div>
+        </div>
+    </div>
+</body>
