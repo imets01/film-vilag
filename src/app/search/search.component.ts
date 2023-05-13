@@ -17,16 +17,26 @@ export class SearchComponent implements OnInit {
   }
 
 searchForm = new FormGroup({
-  'movieName':new FormControl(null)
+  'searchParam':new FormControl(null)
 });
 
 submitForm()
 {
-  console.log(this.searchForm.value,'searchresult#');
-  this.service.searchMovie(this.searchForm.value).subscribe((result)=>{
-    console.log(result.results,'searchmovie#');
+  console.log(this.searchForm.value,'searchparam#');
+  this.service.search(this.searchForm.value).subscribe((result)=>{
+    console.log(result.results,'searchresult#');
     this.searchResult = result.results;
   });
+}
+
+getRouterLink(media: any): any[] {
+  if (media.media_type === 'movie') {
+    return ['/movie', media.id];
+  } else if (media.media_type === 'tv') {
+    return ['/series', media.id];
+  } else {
+    return [];
+  }
 }
 
 }

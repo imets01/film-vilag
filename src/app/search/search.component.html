@@ -3,7 +3,7 @@
 <div class="input-group">
     <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
         <div class="d-flex">
-            <input type="text" class="form-control" formControlName="movieName" placeholder="Search...">
+            <input type="text" class="form-control" formControlName="searchParam" placeholder="Search...">
 <!-- 
             <div class="form-outline">
             </div> -->
@@ -26,15 +26,15 @@
 </div> -->
 
 <div class="results">
-    <ng-container *ngFor="let movie of searchResult">
+    <ng-container *ngFor="let media of searchResult">
         <div class="result-container">
             <div class="cover">
-                <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
-                    [routerLink]="['/movie', movie.id]">
+                <img src="https://image.tmdb.org/t/p/original/{{ media.poster_path }}" alt="Couldn't load"
+                    [routerLink]="getRouterLink(media)">
 
             </div>
             <div class="detail">
-                <div class="name">{{ movie.title || movie.name }}</div>
+                <div class="name">{{ media.title || media.name }}</div>
             </div>
         </div>
 
@@ -55,3 +55,5 @@
         </div>
     </div>
 </div> -->
+
+<app-footer></app-footer>

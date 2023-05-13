@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToHome(){
-    this.router.navigate(['home']);
+    this.router.navigate(['home/movies']);
   }
 
   goToSearch(){
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goToSeries(){
-    this.router.navigate(['series']);
+    this.router.navigate(['home/series']);
   }
 
 }

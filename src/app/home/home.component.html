@@ -1,4 +1,5 @@
 <app-header></app-header>
+<app-welcome></app-welcome>
 
 <div class="home-container">
   <div class="all-movies">
@@ -15,7 +16,8 @@
             </div>
           </div> -->
           <div class="cover">
-            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load" [routerLink]="['/movie', movie.id]">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
+              (click)="goToClicked(movie.id)">
           </div>
           <div class="detail">
             <div class="name">{{ movie.title || movie.name }}</div>
@@ -32,7 +34,8 @@
       <div class="movieposter mt-3 p-2">
         <div class="movie" *ngFor="let movie of popularApiData">
           <div class="cover">
-            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load" [routerLink]="['/movie', movie.id]">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
+              (click)="goToClicked(movie.id)">
           </div>
           <div class="detail">
             <div class="name">{{ movie.title || movie.name }}</div>
@@ -41,7 +44,24 @@
       </div>
     </div>
     <!-- popular end -->
+
+    <!-- toprated start -->
+    <div class="toprated-movies">
+      <h4>Top Rated</h4>
+      <div class="movieposter mt-3 p-2">
+        <div class="movie" *ngFor="let movie of topRatedApiData">
+          <div class="cover">
+            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
+              (click)="goToClicked(movie.id)">
+          </div>
+          <div class="detail">
+            <div class="name">{{ movie.title || movie.name }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- toprated end -->
   </div>
 </div>
 
-
+<app-footer></app-footer>
