@@ -7,19 +7,24 @@
     background: #00DFD7;
     // background: linear-gradient(45deg, #00DFD7 0%, #D0007D 100%);
     // background: linear-gradient(45deg, #00DFD7 0%, #A40068 100%);
-    background: linear-gradient(45deg, #00DFD7 0%, #8B0058 100%);
+    background: linear-gradient(45deg, #008a8a 0%, #7a004e 100%);
+
+    .bi{
+        margin-left: 30px;
+    }
     
     .logo {
-        font-family: "Google Sans", Roboto, Arial, sans-serif;
-        font-size: 28px;
+        font-size: 36px;
         font-weight: bold;
-        margin-left: 30px;
+        margin-left: 5px;
         color: white;
         font-variant: small-caps;
         letter-spacing: 3px;
     }
 
     .selector{
+        font-size: 16px;
+        font-weight: bold;
         display: inline-flex;
         margin-left: 50px;
         margin-right: auto;
@@ -30,9 +35,9 @@
     }
 
     .search {
-        font-size: 15px;
+        font-size: 18px;
         font-weight: bold;
-        margin-right: 30px;
+        margin-right: 40px;
         color: white;
     }
 }

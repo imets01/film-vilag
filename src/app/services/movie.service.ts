@@ -17,9 +17,19 @@ export class MovieService {
     return this.http.get(`${this.apiBaseUrl}/trending/movie/week?api_key=${this.apiKey}`);
   }
 
+  bannerApiData():Observable<any>
+  {
+    return this.http.get(`${this.apiBaseUrl}/trending/movie/day?api_key=${this.apiKey}`);
+  }
+
   popularApiData():Observable<any>
   {
-    return this.http.get(`${this.apiBaseUrl}/movie/popular?api_key=${this.apiKey}&language=en-US&page=1`);
+    return this.http.get(`${this.apiBaseUrl}/movie/popular?api_key=${this.apiKey}`);
+  }
+
+  topRatedApiData():Observable<any>
+  {
+    return this.http.get(`${this.apiBaseUrl}/movie/top_rated?api_key=${this.apiKey}`);
   }
 
   getMovieDetails(id:any):Observable<any>
@@ -52,9 +62,9 @@ export class MovieService {
     return this.http.get(`${this.apiBaseUrl}/tv/${id}/watch/providers?api_key=${this.apiKey}`);
   }
 
-  searchMovie(data:any):Observable<any>
+  search(data:any):Observable<any>
   {
-    return this.http.get(`${this.apiBaseUrl}/search/movie?api_key=${this.apiKey}&query=${data.movieName}`);
+    return this.http.get(`${this.apiBaseUrl}/search/multi?api_key=${this.apiKey}&query=${data.searchParam}`);
   }
 
   trendingTvApiData():Observable<any>
@@ -64,12 +74,32 @@ export class MovieService {
 
   popularTvApiData():Observable<any>
   {
-    return this.http.get(`${this.apiBaseUrl}/tv/popular?api_key=${this.apiKey}&language=en-US&page=1`);
+    return this.http.get(`${this.apiBaseUrl}/tv/popular?api_key=${this.apiKey}`);
   }
 
-  getSeasonDetails(id:any, sid:any):Observable<any>
+  topRatedTvApiData():Observable<any>
   {
-    return this.http.get(`${this.apiBaseUrl}/tv/${id}/season/${sid}?api_key=${this.apiKey}`);
+    return this.http.get(`${this.apiBaseUrl}/tv/top_rated?api_key=${this.apiKey}`);
+  }
+
+  getSeasonDetails(id:any, index:any):Observable<any>
+  {
+    return this.http.get(`${this.apiBaseUrl}/tv/${id}/season/${index}?api_key=${this.apiKey}`);
+  }
+
+  getEpisodeDetails(id:any, index:any, epindex:any):Observable<any>
+  {
+    return this.http.get(`${this.apiBaseUrl}/tv/${id}/season/${index}/episode/${epindex}?api_key=${this.apiKey}`);
+  }
+
+  getPersonDetails(id:any):Observable<any>
+  {
+    return this.http.get(`${this.apiBaseUrl}/person/${id}?api_key=${this.apiKey}`);
+  }
+  
+  getPersonCredits(id:any):Observable<any>
+  {
+    return this.http.get(`${this.apiBaseUrl}/person/${id}/combined_credits?api_key=${this.apiKey}`);
   }
 
 }
