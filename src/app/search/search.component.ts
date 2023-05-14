@@ -27,7 +27,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  /**
+  /**how to 
    * Create a form group for the search input field.
    */
   searchForm = new FormGroup({
