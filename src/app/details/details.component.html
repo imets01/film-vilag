@@ -84,7 +84,7 @@
     <div class="cast">Cast</div>
     <div class="wrapper">
         <div class="card" *ngFor="let actor of credits?.slice(0,15)">
-            <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ actor.profile_path }}"
+            <img class="card-img" [src]="actor.profile_path ? 'https://image.tmdb.org/t/p/original/' + actor.profile_path : 'https://fakeimg.pl/400x600?text=IMG&font=bebas'"
                 alt="Card image cap" [routerLink]="['/person', actor.id]">
             <div class="card-body">
                 <div class="name"> {{ actor.original_name }}</div>

@@ -30,12 +30,12 @@
     <div class="wrapper">
         <div class="card" *ngFor="let media of credits?.slice(0,20)">
             <ng-container *ngIf="media.media_type === 'movie'">
-                <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ media.poster_path }}"
+                <img class="card-img" [src]="media.poster_path ? 'https://image.tmdb.org/t/p/original/' + media.poster_path : 'https://fakeimg.pl/400x600?text=IMG&font=bebas'"
                 alt="Card image cap" [routerLink]="['/movie', media.id]">
             </ng-container>
 
             <ng-container *ngIf="media.media_type === 'tv'">
-                <img class="card-img" src="https://image.tmdb.org/t/p/original/{{ media.poster_path }}"
+                <img class="card-img" [src]="media.poster_path ? 'https://image.tmdb.org/t/p/original/' + media.poster_path : 'https://fakeimg.pl/400x600?text=IMG&font=bebas'"
                 alt="Card image cap" [routerLink]="['/series', media.id]">
             </ng-container>
             

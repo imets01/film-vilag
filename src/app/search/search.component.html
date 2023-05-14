@@ -13,7 +13,7 @@
     <ng-container *ngFor="let media of searchResult">
         <div class="result-container">
             <div class="cover">
-                <img src="https://image.tmdb.org/t/p/original/{{ media.poster_path || media.profile_path }}" alt="Couldn't load"
+                <img [src]="(media.poster_path || media.profile_path) ? 'https://image.tmdb.org/t/p/original/' + (media.poster_path || media.profile_path) : 'https://fakeimg.pl/400x600?text=IMG&font=bebas'"
                     [routerLink]="getRouterLink(media)">
 
             </div>
