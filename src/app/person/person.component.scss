@@ -3,10 +3,12 @@
     display: flex;
     overflow-x: scroll;
     margin-left: 50px;
+    margin-bottom: 50px;
 
     .card {
         border-radius: 20px;
         margin-top: 10px;
+        margin-bottom: 15px;
         margin-left: 15px;
         min-width: 150px;
         max-width: 150px;
@@ -124,6 +126,7 @@ body{
 .wrapper::-webkit-scrollbar {
     width: 12px;
     background-color: #F5F5F5;
+    
 }
 
 .wrapper::-webkit-scrollbar-thumb {

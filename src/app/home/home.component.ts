@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
+/**
+ * Represents the main page content.
+ */
 export class HomeComponent implements OnInit {
 
   constructor(private service: MovieService, private arouter: ActivatedRoute, private router: Router) { }
@@ -36,10 +39,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  goToSearch() {
-    this.router.navigate(['search']);
-  }
-
+  /**
+  * Navigates to the details page of a clicked movie or series based on the route parameter.
+  * @param id The ID of the clicked movie or series.
+  */
   goToClicked(id: any) {
     if (this.getParam === 'movies') {
       console.log(this.getParam, 'clicked movie#');
@@ -49,7 +52,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-
+  /**
+   * Fetches trending movie data from the service and assigns the result to 'this.trendingApiData'.
+   */
   getTrendingData() {
     this.service.trendingApiData().subscribe((result) => {
       console.log(result.results, 'trendingresult#');
@@ -57,6 +62,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+   /**
+   * Fetches popular movie data from the service and assigns the result to 'this.popularApiData'.
+   */
   getPopularData() {
     this.service.popularApiData().subscribe((result) => {
       console.log(result.results, 'popularresult#');
@@ -64,6 +72,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * Fetches top-rated movie data from the service and assigns the result to 'this.topRatedApiData'.
+   */
   getTopRatedData() {
     this.service.topRatedApiData().subscribe((result) => {
       console.log(result.results, 'topratedresult#');
@@ -71,6 +82,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * Fetches trending TV show data from the service and assigns the result to 'this.trendingApiData'.
+   */
   getTvTrendingData() {
     this.service.trendingTvApiData().subscribe((result) => {
       console.log(result.results, 'tv-trendingresult#');
@@ -78,6 +92,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * Fetches popular TV show data from the service and assigns the result to 'this.popularApiData'.
+   */
   getTvPopularData() {
     this.service.popularTvApiData().subscribe((result) => {
       console.log(result.results, 'tv-popularresult#');
@@ -85,6 +102,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * Fetches top-rated TV show data from the service and assigns the result to 'this.topRatedApiData'.
+   */
   getTvTopRatedData() {
     this.service.topRatedTvApiData().subscribe((result) => {
       console.log(result.results, 'tv-topratedresult#');

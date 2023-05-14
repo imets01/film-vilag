@@ -1,19 +1,20 @@
 <app-header></app-header>
 
 <main class="container">
+    <!-- left column start -->
     <div class="left-column">
         <img class="poster" [src]="getImageUrl()" alt="Couldn't load">
     </div>
+    <!-- left column end -->
 
+    <!-- right column start -->
     <div class="right-column">
-
         <div class="title" *ngIf="!details?.episode_number">
             {{ details?.title || details?.name }}
         </div>
         <div class="title" *ngIf="details?.episode_number">
             {{ details?.title || details?.name }} - S{{ details?.season_number }}E{{ details?.episode_number }}
         </div>
-
 
         <div class="details">
             <div *ngIf="details?.release_date">{{ details?.release_date }}</div>
@@ -35,8 +36,6 @@
                 <div class="value">TMDB Rating: {{ details?.vote_average }}</div>
             </div>
         </div>
-
-
 
         <div class="overview">
             <div class="header">Overview</div>
@@ -63,18 +62,6 @@
                         *ngFor="let season of details?.seasons; let i = index">{{ season.name }}</a>
                 </ng-container>
 
-
-                <!-- <ng-container *ngFor="let season of details.seasons; let i = index">
-                    <a class="dropdown-item" (click)="goToSeasons(details.id, i+1)"
-                        *ngIf="details.seasons[0].name === 'Specials'">Season {{ i+1 }}</a>
-                    <a class="dropdown-item" (click)="goToSeasons(details.id, i+1)"
-                        *ngIf="details.seasons[0].name !== 'Specials'">{{ season.name }}</a>
-                </ng-container> -->
-
-
-                <!-- <a class="dropdown-item" (click)="goToSeasons(details.id, i+1)"
-                    *ngFor="let season of details.seasons; let i = index">{{ season.name }}</a> -->
-
             </div>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="details?.episodes">
                 <a class="dropdown-item" (click)="goToEpisodes(parentId, seasonIndex, i+1)"
@@ -89,8 +76,10 @@
             </div>
         </div>
     </div>
+    <!-- right column end -->
 </main>
 
+<!-- cast start -->
 <body>
     <div class="cast">Cast</div>
     <div class="wrapper">
@@ -104,5 +93,6 @@
         </div>
     </div>
 </body>
+<!-- cast end -->
 
 <app-footer></app-footer>

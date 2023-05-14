@@ -9,12 +9,6 @@
       <h4>Trending</h4>
       <div class="movieposter mt-3 p-2">
         <div class="movie" *ngFor="let movie of trendingApiData">
-          <!-- <div class="card">
-            <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">{{ movie.title || movie.name }}</p>
-            </div>
-          </div> -->
           <div class="cover">
             <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
               (click)="goToClicked(movie.id)">
