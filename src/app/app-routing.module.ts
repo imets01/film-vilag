@@ -6,7 +6,7 @@ import { DetailsComponent } from './details/details.component';
 import { PersonComponent } from './person/person.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'home/movies', pathMatch: 'full'},
   {path: 'home/movies', component: HomeComponent},
   {path: 'home/series', component: HomeComponent},
   {path: 'search', component: SearchComponent},

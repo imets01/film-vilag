@@ -21,20 +21,29 @@
         color: white;
         font-variant: small-caps;
         letter-spacing: 3px;
+        cursor: pointer;
     }
 
     .selector{
         font-size: 16px;
         letter-spacing: 1px;
-        font-weight: bold;
+        font-weight: 600;
         display: inline-flex;
         margin-left: 50px;
         margin-right: auto;
         color: white;
+        cursor: pointer;
         div{
-            margin-left: 40px;
+            padding-left: 40px;
+            width: 100px;
+        }
+
+        div:hover{
+            font-weight: 700;
         }
     }
+
+    
 
     .search {
         font-size: 18px;
@@ -42,5 +51,6 @@
         margin-right: 40px;
         color: white;
         margin-bottom: 5px;
+        cursor: pointer;
     }
 }

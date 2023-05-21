@@ -53,8 +53,10 @@ button {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+
     form {
         width: 60%;
+
         .d-flex {
             input[type="text"].form-control {
                 margin-right: 20px;
@@ -71,6 +73,7 @@ button {
                 box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
                 background: rgb(251, 251, 251);
                 transition: all 0.1s ease 0s;
+
                 &:focus {
                     border: 2px solid transparent;
                 }
@@ -82,7 +85,7 @@ button {
 img {
     width: 200px;
     height: 300px;
-    
+
 }
 
 .results {
@@ -99,9 +102,14 @@ img {
         margin-bottom: 0px;
         overflow: hidden;
         box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
-
-
+        cursor: pointer;
+        transition: transform 0.5s ease;
     }
+
+    .cover:hover {
+        transform: scale(1.1);
+    }
+
 
     .detail {
         max-width: 200px;
@@ -109,10 +117,11 @@ img {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
+
         .name {
             text-align: center;
             font-weight: bold;
-            margin-top: 5px;
+            margin-top: 15px;
             cursor: pointer;
         }
     }

@@ -7,7 +7,7 @@
     <!-- trending start -->
     <div class="trending-movies">
       <h4>Trending</h4>
-      <div class="movieposter mt-3 p-2">
+      <div class="movieposter mt-3">
         <div class="movie" *ngFor="let movie of trendingApiData">
           <div class="cover">
             <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
@@ -25,7 +25,7 @@
     <!-- popular start -->
     <div class="popular-movies">
       <h4>Popular</h4>
-      <div class="movieposter mt-3 p-2">
+      <div class="movieposter mt-3">
         <div class="movie" *ngFor="let movie of popularApiData">
           <div class="cover">
             <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
@@ -42,7 +42,7 @@
     <!-- toprated start -->
     <div class="toprated-movies">
       <h4>Top Rated</h4>
-      <div class="movieposter mt-3 p-2">
+      <div class="movieposter mt-3">
         <div class="movie" *ngFor="let movie of topRatedApiData">
           <div class="cover">
             <img src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}" alt="Couldn't load"
